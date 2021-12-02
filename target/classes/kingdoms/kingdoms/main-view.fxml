@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Font?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml" hgap="64" vgap="10"
+          fx:controller="kingdoms.kingdoms.MainViewController">
+
+    <Label fx:id="title" text="Kingdoms" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"><font><Font name="Arial" size="24" /></font></Label>
+    <Label text="Dodawanie" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1"><font><Font size="18" /></font></Label>
+    <Button text="Dodaj prowincję" onAction="#addProvinceButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Button text="Dodaj Władcę" onAction="#addRulerButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Button text="Dodaj Księstwo" onAction="#addDuchyButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Button text="Dodaj Królestwo" onAction="#addKingdomButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Button text="Dodaj Cesarstwo" onAction="#addEmpireButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Label text="Podgląd" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1"><font><Font size="18" /></font></Label>
+    <Button text="Przeglądarka obiektów" onAction="#displayButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Usuwanie" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3"><font><Font size="18" /></font></Label>
+    <Button text="Usuń obiekt z bazy" onAction="#deleteButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+</GridPane>
