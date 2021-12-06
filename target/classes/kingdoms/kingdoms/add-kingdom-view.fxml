@@ -6,12 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<?import javafx.collections.*?>
-<?import kingdoms.kingdoms.BaseObject?>
+<?import javafx.geometry.Insets?>
 
-<?import javafx.scene.control.cell.CheckBoxListCell?>
 <GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10" prefHeight="500.0" prefWidth="300.0"
-          fx:controller="kingdoms.kingdoms.AddKingdomViewController">
+          fx:controller="kingdoms.kingdoms.AddKingdomViewController"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
     <Label text="Dodaj nowe królestwo" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"><font><Font name="Arial" size="18" /></font></Label>
     <Label text="Nazwa" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1"/>

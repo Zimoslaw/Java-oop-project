@@ -16,14 +16,7 @@ public class Empire extends Kingdom
         updateLegitimacy();
         updateStability();
         updateInfluence();
-    }
-
-    private void updateProvinces() {
-        for(Kingdom k : kingdoms)
-        {
-            for(Province p : k.getProvinces())
-                this.addProvince(p);
-        }
+        this.getRuler().updateStrength(getArea());
     }
 
     public int getInfluence() {
@@ -42,6 +35,24 @@ public class Empire extends Kingdom
         }
 
         return area;
+    }
+
+    public List<Kingdom> getKingdoms()
+    {
+        return kingdoms;
+    }
+
+    public void addKingdom(Kingdom kingdom)
+    {
+        kingdoms.add(kingdom);
+    }
+
+    private void updateProvinces() {
+        for(Kingdom k : kingdoms)
+        {
+            for(Province p : k.getProvinces())
+                this.addProvince(p);
+        }
     }
 
     public void updateInfluence() {

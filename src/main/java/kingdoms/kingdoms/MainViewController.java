@@ -13,8 +13,6 @@ import static kingdoms.kingdoms.Main.ShowAddEmpireWindow;
 
 
 public class MainViewController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
     protected void addProvinceButtonClick() throws IOException {

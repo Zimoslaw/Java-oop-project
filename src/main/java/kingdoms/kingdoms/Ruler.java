@@ -7,6 +7,7 @@ public class Ruler extends Person {
     
     private int prestige;
     private List<Province> claims;
+    private int strength;
 
     public Ruler(String name, short age, int prestige, Province initClaim)
     {
@@ -14,6 +15,7 @@ public class Ruler extends Person {
         this.prestige = prestige;
         claims = new ArrayList<Province>();
         claims.add(initClaim);
+        updateStrength();
     }
 
     public void Age()
@@ -39,8 +41,23 @@ public class Ruler extends Person {
         claims.add(claim);
     }
 
+    public void updateStrength()
+    {
+        strength = 5*prestige;
+    }
+
+    public void updateStrength(int domesne)
+    {
+        strength = prestige*domesne;
+    }
+
+    public int getStrength()
+    {
+        return strength;
+    }
+
     public String ToString() {
-        String info = "(ID: "+super.getId()+"), \""+super.getName()+"\", Wiek: "+super.getAge()+", Roszczenia:";
+        String info = "(ID: "+super.getId()+"), \""+super.getName()+"\", Wiek: "+super.getAge()+", Siła armii: "+strength+" bojów, Roszczenia:";
 
         if(!claims.isEmpty())
         {

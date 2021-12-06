@@ -6,19 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
 
 <GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10" prefHeight="500" prefWidth="600.0"
-          fx:controller="kingdoms.kingdoms.DisplayViewController">
+          fx:controller="kingdoms.kingdoms.DisplayViewController" ><padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
-    <Label text="Przeglądaj obiekty" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" ><font><Font name="Arial" size="18" /></font></Label>
-    <Label text="Wyszukaj po nazwie" alignment="CENTER_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="250"/>
-    <TextField fx:id="name" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <Label text="Filtruj po typie" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="250"/>
-    <ComboBox fx:id="type"  GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="RIGHT">
+    <Label text="Przeglądaj obiekty" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS"><font><Font name="Arial" size="18" /></font></Label>
+    <Label text="Wyszukaj po nazwie" alignment="CENTER_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="250" GridPane.hgrow="ALWAYS"/>
+    <TextField fx:id="name" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.hgrow="ALWAYS"/>
+    <Label text="Filtruj po typie" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="250" GridPane.hgrow="ALWAYS"/>
+    <ComboBox fx:id="type"  GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS">
 
     </ComboBox>
-    <Button text="Filtruj" onAction="#Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="RIGHT"/>
-    <ListView fx:id="list" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2" prefWidth="500" GridPane.vgrow="ALWAYS" >
+    <Button text="Filtruj" onAction="#Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS"/>
+    <ListView fx:id="list" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2" prefWidth="500" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS">
 
     </ListView>
 </GridPane>

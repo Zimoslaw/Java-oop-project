@@ -19,6 +19,7 @@ public class Duchy extends Province {
         this.centralization = centralization;
         this.setArea(getArea());
         updateStability();
+        this.ruler.updateStrength(getArea()*(5-centralization.level));
     }
 
     public int getArea()

@@ -13,6 +13,7 @@ public class Kingdom extends Duchy {
         //this.setArea(this.getArea());
         this.legitimacy = legitimacy;
         updateStability();
+        this.getRuler().updateStrength(this.getArea()*(5-centralization.level)+legitimacy*10);
     }
 
     public int getLegitimacy() {
