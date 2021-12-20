@@ -6,9 +6,9 @@ import java.util.List;
 public class Empire extends Kingdom
 {
     private int influence;
-    private List<Kingdom> kingdoms = new ArrayList<Kingdom>();
+    private List<Province> kingdoms = new ArrayList<Province>();
 
-    public Empire(String name, Ruler ruler, List<Kingdom> kingdoms, Centralization centralization)
+    public Empire(String name, Ruler ruler, List<Province> kingdoms, Centralization centralization)
     {
         super(name, ruler, new ArrayList<Province>(), centralization, 0);
         this.kingdoms = kingdoms;
@@ -29,7 +29,7 @@ public class Empire extends Kingdom
 
         int area = 0;
 
-        for(Kingdom k : kingdoms)
+        for(Province k : kingdoms)
         {
             area += k.getArea();
         }
@@ -37,18 +37,18 @@ public class Empire extends Kingdom
         return area;
     }
 
-    public List<Kingdom> getKingdoms()
+    public List<Province> getKingdoms()
     {
         return kingdoms;
     }
 
-    public void addKingdom(Kingdom kingdom)
+    public void addKingdom(Province kingdom)
     {
         kingdoms.add(kingdom);
     }
 
     private void updateProvinces() {
-        for(Kingdom k : kingdoms)
+        for(Province k : kingdoms)
         {
             for(Province p : k.getProvinces())
                 this.addProvince(p);
@@ -64,7 +64,7 @@ public class Empire extends Kingdom
     public void updateLegitimacy()
     {
         int l = 0;
-        for(Kingdom kingdom : kingdoms)
+        for(Province kingdom : kingdoms)
             l += kingdom.getLegitimacy();
         this.setLegitimacy(l);
     }
@@ -78,7 +78,7 @@ public class Empire extends Kingdom
         else
         {
             int stability = 0;
-            for(Kingdom k : kingdoms)
+            for(Province k : kingdoms)
                 stability += StabilityToInt(k.getStability());
             stability/=kingdoms.size();
 
@@ -110,7 +110,7 @@ public class Empire extends Kingdom
     {
         String info = "(ID: "+this.getId()+") \""+this.getName()+"\",\n-Władca: "+getRuler().ToString()+"\n---\nPowierzchnia: "+getArea()+",\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+this.getLegitimacy()+",\n-Poziom wpływu: "+influence+"\nKrólestwa:";
 
-            for (Kingdom kingdom : kingdoms)
+            for (Province kingdom : kingdoms)
             {
                 info += "\n\t" + kingdom.ToString();
             }
