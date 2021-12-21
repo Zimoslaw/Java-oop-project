@@ -1,5 +1,8 @@
 package kingdoms.kingdoms;
 
+/**
+Implements levels of state's (duchy, kingdom or empire) stability, which defines contentment among people*/
+
 enum Stability {
     Anarchy("Anarchia"),
     Unstable("Niestabilnie"),

@@ -6,7 +6,8 @@ import java.util.List;
 /**
 <p>Implements an ruler - person who has at least one claim (for province) and can rule a duchy/kingdom/empire</p>
 <p>Ruler has its prestinge used for calculating its strength (army), stability of ruled duchy/kingdom/empire and influence of ruled empire</p>
-<p>Strength is a size of a ruler's personal army (number of soldiers)</p>*/
+<p>Strength is a size of a ruler's personal army (number of soldiers)</p>
+*/
 
 public class Ruler extends Person {
     

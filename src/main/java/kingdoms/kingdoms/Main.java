@@ -10,6 +10,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main extends Application {
+    /**
+    Shows main window
+    @param stage JavaFX stage of main window
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
@@ -20,6 +24,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the new province adding window */
     public static void ShowAddProvinceWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -30,6 +36,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the new ruler adding window */
     public static void ShowAddRulerWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -40,6 +48,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the new duchy adding window */
     public static void ShowAddDuchyWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -50,6 +60,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the new kingdom adding window */
     public static void ShowAddKingdomWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -60,6 +72,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the new empire adding window */
     public static void ShowAddEmpireWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -70,6 +84,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the database browser window */
     public static void ShowDisplayWindow() throws IOException
     {
         Stage stage = new Stage();
@@ -80,6 +96,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+    Shows the object deleting window */
     public static void ShowDeleteWindow() throws IOException
     {
         Stage stage = new Stage();

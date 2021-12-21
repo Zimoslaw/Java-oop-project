@@ -1,10 +1,14 @@
 package kingdoms.kingdoms;
 
+/**
+Lists all classes used in game and that can be instantiate
+ */
+
 enum Classes {
     Wszystkie,
-    Province,
-    Ruler,
-    Duchy,
-    Kingdom,
-    Empire;
+    Provincja,
+    Władca,
+    Księstwo,
+    Królestwo,
+    Cesarstwo;
 }

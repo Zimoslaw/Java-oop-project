@@ -1,5 +1,8 @@
 package kingdoms.kingdoms;
 
+/**
+Implements state's (duchy, kingdom or empire) centralization - how much power belongs to state's ruler */
+
 enum Centralization {
     MocnaDecentralizacja(4),
     Niska(3),
