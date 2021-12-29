@@ -10,6 +10,7 @@ import java.util.List;
 public class Empire extends Kingdom
 {
     private int influence;
+    private List<Kingdom> kingdoms;
 
     /**
     Constructs empire with name, ruler, kingdoms and centralization
@@ -18,9 +19,10 @@ public class Empire extends Kingdom
     @param kingdoms List of kingdoms held by the empire
     @param centralization Empire's centralization enum
     */
-    public Empire(String name, Ruler ruler, List<Province> kingdoms, Centralization centralization)
+    public Empire(String name, Ruler ruler, List<Kingdom> kingdoms, Centralization centralization)
     {
         super(name, ruler, kingdoms, centralization, 0);
+        this.kingdoms = kingdoms;
         updateLegitimacy();
         updateStability();
         updateInfluence();
@@ -34,11 +36,37 @@ public class Empire extends Kingdom
     }
 
     /**
+    @return Kindoms held by the empire. Overrides getProvinces() from Duchy because Empire holds only kingdoms, not provinces */
+    public List<Kingdom> getProvinces()
+    {
+        return kingdoms;
+    }
+
+    /**
+    Adds new kingdom to the empire
+    @param kingdom New kingdom to add
+     */
+    public void addProvince(Kingdom kingdom)
+    {
+        kingdoms.add(kingdom);
+    }
+
+    /**
+    @return Total area of kingdoms in the Empire */
+    public int getArea()
+    {
+        int area = 0;
+        for(Kingdom kingdom : kingdoms)
+            area += kingdom.getArea();
+        return area;
+    }
+
+    /**
     Updates empire's influence based on its area, centralization, legitimacy and ruler's prestige */
     public void updateInfluence() {
         int stability = StabilityToInt(this.getStability());
 
-        influence = this.getArea() * this.getCentralization().level * stability + this.getLegitimacy() + this.getRuler().getPrestige();
+        influence = getArea() * this.getCentralization().level * stability + this.getLegitimacy() + this.getRuler().getPrestige();
     }
 
     /**
@@ -46,26 +74,26 @@ public class Empire extends Kingdom
     public void updateLegitimacy()
     {
         int l = 0;
-        for(Province kingdom : this.getProvinces())
+        for(Kingdom kingdom : kingdoms)
             l += kingdom.getLegitimacy();
-        l /= this.getProvinces().size();
-        this.setLegitimacy(l);
+        l /= kingdoms.size();
+        setLegitimacy(l);
     }
 
     /**
     Updates empire's stability. Empire's stability is an average stability of its kingdoms */
     public void updateStability()
     {
-        if(this.getProvinces() == null)
+        if(kingdoms == null)
         {
             this.setStability(Stability.Prosperity);
         }
         else
         {
             int stability = 0;
-            for(Province k : this.getProvinces())
+            for(Kingdom k : kingdoms)
                 stability += StabilityToInt(k.getStability());
-            stability /= this.getProvinces().size();
+            stability /= kingdoms.size();
 
             switch(stability)
             {
@@ -99,7 +127,7 @@ public class Empire extends Kingdom
     {
         String info = "(ID: "+this.getId()+") \""+this.getName()+"\",\n-Władca: "+this.getRuler().ToString()+"\n---\nPowierzchnia: "+this.getArea()+",\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+this.getLegitimacy()+",\n-Poziom wpływu: "+influence+"\nKrólestwa:";
 
-            for (Province kingdom : kingdoms)
+            for (Kingdom kingdom : kingdoms)
             {
                 info += "\n\t" + kingdom.ToString();
             }

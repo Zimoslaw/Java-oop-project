@@ -150,4 +150,11 @@ public class DisplayViewController {
 
         list.setCellFactory(cellFactory2);
     }
+
+    @FXML
+    private void UpdateSelectedObject() {
+        String objectData = list.getValue();
+
+        int id = Integer.parseInt(objectData.substring(objectData.indexOf("ID: "),objectData.lastIndexOf(")")-1));
+    }
 }
