@@ -35,10 +35,7 @@ public abstract class Person extends BaseObject {
     public void setAge(short age) { this.age = age; }
 
     /**
-    Incrementing an age of thep person (method for aging of the person)
+    Incrementing an age of the person (method for aging of the person)
     */
-    public abstract void Age()
-    {
-        age++;
-    }
+    public abstract void Age();
 }

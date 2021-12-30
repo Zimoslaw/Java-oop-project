@@ -18,7 +18,7 @@ public class Empire extends Kingdom
     @param kingdoms List of kingdoms held by the empire
     @param centralization Empire's centralization enum
     */
-    public Empire(String name, Ruler ruler, List<Province> kingdoms, Centralization centralization)
+    public Empire(String name, Ruler ruler, List<Kingdom> kingdoms, Centralization centralization)
     {
         super(name, ruler, kingdoms, centralization, 0);
         updateLegitimacy();
