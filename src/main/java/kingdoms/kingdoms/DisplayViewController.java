@@ -7,8 +7,7 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.util.List;
 
-import static kingdoms.kingdoms.Main.ShowAddProvinceWindow;
-import static kingdoms.kingdoms.Main.database;
+import static kingdoms.kingdoms.Main.*;
 
 public class DisplayViewController {
     @FXML
@@ -17,6 +16,8 @@ public class DisplayViewController {
     private ComboBox<Classes> type;
     @FXML
     private ListView<String> list;
+    @FXML
+    private Button modButton;
 
     @FXML
     protected void initialize()
@@ -44,6 +45,7 @@ public class DisplayViewController {
 
         type.setButtonCell(cellFactory.call(null));
         type.setCellFactory(cellFactory);
+
     }
 
     @FXML
@@ -69,52 +71,52 @@ public class DisplayViewController {
         {
             switch (type.getValue())
             {
-                case Province:
-                    for (var obj:database)
-                    {
-                        if(obj.getName().contains(searchedWord))
-                        {
-                            if (obj instanceof Province)
-                                objects.add(obj.ToString());
-                        }
-                    }
-                    break;
-                case Ruler:
-                    for (var obj:database)
-                    {
-                        if(obj.getName().contains(searchedWord))
-                        {
-                            if (obj instanceof Ruler)
-                                objects.add(obj.ToString());
-                        }
-                    }
-                    break;
-                case Duchy:
-                    for (var obj:database)
-                    {
-                        if(obj.getName().contains(searchedWord))
-                        {
-                            if (obj instanceof Duchy)
-                                objects.add(obj.ToString());
-                        }
-                    }
-                    break;
-                case Kingdom:
-                    for (var obj:database)
-                    {
-                        if(obj.getName().contains(searchedWord))
-                        {
-                            if(obj instanceof Kingdom)
-                                objects.add(obj.ToString());
-                        }
-                    }
-                    break;
-                case Empire:
+                case Cesarstwo:
                     for (var obj:database)
                     {
                         if(obj.getName().contains(searchedWord))
                         {
                             if (obj instanceof Empire)
+                                objects.add(obj.ToString());
+                        }
+                    }
+                    break;
+                case Królestwo:
+                    for (var obj:database)
+                    {
+                        if(obj.getName().contains(searchedWord))
+                        {
+                            if(obj instanceof Kingdom && obj instanceof Empire == false)
+                                objects.add(obj.ToString());
+                        }
+                    }
+                    break;
+                case Księstwo:
+                    for (var obj:database)
+                    {
+                        if(obj.getName().contains(searchedWord))
+                        {
+                            if (obj instanceof Duchy && obj instanceof Kingdom == false)
+                                objects.add(obj.ToString());
+                        }
+                    }
+                    break;
+                case Prowincja:
+                    for (var obj:database)
+                    {
+                        if(obj.getName().contains(searchedWord))
+                        {
+                            if (obj instanceof Province && obj instanceof Duchy == false)
+                                objects.add(obj.ToString());
+                        }
+                    }
+                    break;
+                case Władca:
+                    for (var obj:database)
+                    {
+                        if(obj.getName().contains(searchedWord))
+                        {
+                            if (obj instanceof Ruler)
                                 objects.add(obj.ToString());
                         }
                     }
@@ -152,9 +154,48 @@ public class DisplayViewController {
     }
 
     @FXML
-    private void UpdateSelectedObject() {
-        String objectData = list.getValue();
+    protected void EnableModButton() throws IOException {
+        if(list.getSelectionModel().getSelectedItem() != null)
+            modButton.setDisable(false);
+    }
 
-        int id = Integer.parseInt(objectData.substring(objectData.indexOf("ID: "),objectData.lastIndexOf(")")-1));
+    @FXML
+    protected void UpdateSelectedObject() throws IOException {
+        String objectData = list.getSelectionModel().getSelectedItem();
+
+        long id = Long.parseLong(objectData.substring(objectData.indexOf("ID: ")+4,objectData.indexOf(")")));
+
+        for (var obj:database)
+        {
+            if(obj.getId() == id)
+            {
+                modID = id;
+                if(obj instanceof Ruler)
+                {
+                    ShowModRulerWindow();
+                    break;
+                }
+                if(obj instanceof Empire)
+                {
+                    ShowModEmpireWindow();
+                    break;
+                }
+                if(obj instanceof Kingdom)
+                {
+                    ShowModKingdomWindow();
+                    break;
+                }
+                if(obj instanceof Duchy)
+                {
+                    ShowModDuchyWindow();
+                    break;
+                }
+                if(obj instanceof Province)
+                {
+                    ShowModProvinceWindow();
+                    break;
+                }
+            }
+        }
     }
 }

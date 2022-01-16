@@ -23,6 +23,7 @@ public class Province extends BaseObject {
     }
 
     /**
+     * Returns area of the province
     @return Area of the province
     */
     public int getArea() {

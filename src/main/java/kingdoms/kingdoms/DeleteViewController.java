@@ -6,8 +6,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import static kingdoms.kingdoms.Main.ShowAddProvinceWindow;
-import static kingdoms.kingdoms.Main.database;
+import static kingdoms.kingdoms.Main.*;
+import static kingdoms.kingdoms.Main.ShowModProvinceWindow;
 
 public class DeleteViewController {
     @FXML
@@ -21,11 +21,22 @@ public class DeleteViewController {
         {
             try
             {
-                int i = Integer.parseInt(id.getText());
-                BaseObject obj = database.get(i);
-                obj = null;
-                database.remove(i);
-                infos.setText("Usunięto obiekt od ID "+i);
+                long i = Long.parseLong(id.getText());
+                boolean found = false;
+
+                for (BaseObject obj:database)
+                {
+                    if(obj.getId() == i)
+                    {
+                        database.remove(obj);
+                        infos.setText("Usunięto obiekt o ID "+i);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found)
+                    infos.setText("Nie znaleziono obiektu o ID "+i);
             }
             catch(Throwable exception)
             {

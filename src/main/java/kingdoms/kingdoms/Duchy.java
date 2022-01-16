@@ -40,9 +40,12 @@ public class Duchy extends Province {
     public int getArea()
     {
         int area = 0;
-        for(Province p : provinces)
+        if(provinces != null)
         {
-            area += p.getArea();
+            for(Province p : provinces)
+            {
+                area += p.getArea();
+            }
         }
         return area;
     }
@@ -72,12 +75,12 @@ public class Duchy extends Province {
     }
 
     /**
-    Adds a province to duchy
-    @param province New province to add
+    Sets new provinces of the duchy
+    @param provinces List of provinces to set
      */
-    public void addProvince(Province province)
+    public void setProvinces(List<Province> provinces)
     {
-        provinces.add(province);
+        this.provinces = provinces;
     }
 
     /**

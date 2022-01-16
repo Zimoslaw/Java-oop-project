@@ -48,7 +48,8 @@ public class Kingdom extends Duchy {
      */
     public void setRuler(Ruler ruler)
     {
-        this.setRuler(ruler);
+        super.setRuler(ruler);
+        getRuler().updateStrength(this.getArea()*(5-getCentralization().level)+legitimacy*10);
         updateStability();
     }
 
@@ -95,7 +96,7 @@ public class Kingdom extends Duchy {
      */
     public String ToString()
     {
-        String info = "(ID: "+this.getId()+") \""+this.getName()+"\", Powierzchnia: "+this.getArea()+",\n-Władca: "+getRuler().ToString()+"\n---,\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+legitimacy+",\n---Prowincje/Księstwa:";
+        String info = "(ID: "+this.getId()+") \""+this.getName()+"\", Powierzchnia: "+this.getArea()+",\n--Władca: "+getRuler().ToString()+"\n--,\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+legitimacy+",\n---Prowincje/Księstwa:";
 
         if(!this.getProvinces().isEmpty())
         {

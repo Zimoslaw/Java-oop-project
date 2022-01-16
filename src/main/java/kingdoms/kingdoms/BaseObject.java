@@ -24,7 +24,7 @@ class BaseObject implements IData {
     }
 
     /**
-    Incerements static ID variable in order to set unique ID for each new created object in database
+    Increments static ID variable in order to set unique ID for each new created object in database
     @return next ID in database
      */
     public static long getNextIdNumerator() {

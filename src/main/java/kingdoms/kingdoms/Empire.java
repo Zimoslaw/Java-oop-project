@@ -21,12 +21,12 @@ public class Empire extends Kingdom
     */
     public Empire(String name, Ruler ruler, List<Kingdom> kingdoms, Centralization centralization)
     {
-        super(name, ruler, kingdoms, centralization, 0);
+        super(name, ruler, null, centralization, 0);
         this.kingdoms = kingdoms;
         updateLegitimacy();
         updateStability();
         updateInfluence();
-        this.getRuler().updateStrength(getArea());
+        this.getRuler().updateStrength(getEmpireArea());
     }
 
     /**
@@ -37,23 +37,23 @@ public class Empire extends Kingdom
 
     /**
     @return Kindoms held by the empire. Overrides getProvinces() from Duchy because Empire holds only kingdoms, not provinces */
-    public List<Kingdom> getProvinces()
+    public List<Kingdom> getKingdoms()
     {
         return kingdoms;
     }
 
     /**
-    Adds new kingdom to the empire
-    @param kingdom New kingdom to add
+    Sets new kingdoms of the empire
+    @param kingdoms List of kingdoms to set
      */
-    public void addProvince(Kingdom kingdom)
+    public void setKingdoms(List<Kingdom> kingdoms)
     {
-        kingdoms.add(kingdom);
+        this.kingdoms = kingdoms;
     }
 
     /**
     @return Total area of kingdoms in the Empire */
-    public int getArea()
+    public int getEmpireArea()
     {
         int area = 0;
         for(Kingdom kingdom : kingdoms)
@@ -125,7 +125,7 @@ public class Empire extends Kingdom
      */
     public String ToString()
     {
-        String info = "(ID: "+this.getId()+") \""+this.getName()+"\",\n-Władca: "+this.getRuler().ToString()+"\n---\nPowierzchnia: "+this.getArea()+",\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+this.getLegitimacy()+",\n-Poziom wpływu: "+influence+"\nKrólestwa:";
+        String info = "(ID: "+this.getId()+") \""+this.getName()+"\",\n-Władca: "+this.getRuler().ToString()+"\n---\nPowierzchnia: "+this.getEmpireArea()+",\n-Stabilność: "+this.getStability().name+",\n-Centralizacja: "+this.getCentralization().name()+",\n-Prawowitość: "+this.getLegitimacy()+",\n-Poziom wpływu: "+influence+"\nKrólestwa:";
 
             for (Kingdom kingdom : kingdoms)
             {

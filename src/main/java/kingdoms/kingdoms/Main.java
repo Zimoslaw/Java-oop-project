@@ -37,6 +37,18 @@ public class Main extends Application {
     }
 
     /**
+     Shows the province modifying window */
+    public static void ShowModProvinceWindow() throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mod-province-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 200);
+        stage.setTitle("Zmodyfikuj prowincję");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
     Shows the new ruler adding window */
     public static void ShowAddRulerWindow() throws IOException
     {
@@ -44,6 +56,18 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("add-ruler-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         stage.setTitle("Dodaj nowego władcę");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
+     Shows the ruler modifying window */
+    public static void ShowModRulerWindow() throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mod-ruler-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+        stage.setTitle("Zmodyfikuj władcę");
         stage.setScene(scene);
         stage.show();
     }
@@ -61,6 +85,18 @@ public class Main extends Application {
     }
 
     /**
+     Shows the duchy modifying window */
+    public static void ShowModDuchyWindow() throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mod-duchy-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+        stage.setTitle("Zmodyfikuj księstwo");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
     Shows the new kingdom adding window */
     public static void ShowAddKingdomWindow() throws IOException
     {
@@ -73,6 +109,18 @@ public class Main extends Application {
     }
 
     /**
+     Shows the kingdom modifying window */
+    public static void ShowModKingdomWindow() throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mod-kingdom-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+        stage.setTitle("Zmodyfikuj królestwo");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
     Shows the new empire adding window */
     public static void ShowAddEmpireWindow() throws IOException
     {
@@ -80,6 +128,18 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("add-empire-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 500);
         stage.setTitle("Dodaj nowe cesarstwo");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
+     Shows the empire modifying window */
+    public static void ShowModEmpireWindow() throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mod-empire-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+        stage.setTitle("Zmodyfikuj cesarstwo");
         stage.setScene(scene);
         stage.show();
     }
@@ -109,6 +169,8 @@ public class Main extends Application {
     }
 
     static List<BaseObject> database = new ArrayList<BaseObject>();
+
+    static long modID;
 
     public static void main(String[] args) {
         launch();

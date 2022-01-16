@@ -57,9 +57,9 @@ public class Ruler extends Person {
     Adds a new claim
     @param claim A new claim to add 
     */
-    public void addClaim(Province claim)
+    public void setClaim(Province claim)
     {
-        claims.add(claim);
+        this.claims = claims;
     }
 
     /**
@@ -85,6 +85,11 @@ public class Ruler extends Person {
     public int getStrength()
     {
         return strength;
+    }
+
+    public void Age()
+    {
+        setAge((short)(getAge()+1));
     }
 
     /**
