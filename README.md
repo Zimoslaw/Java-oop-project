@@ -17,7 +17,7 @@ Przycisk "Przeglądarka obiektów" otwiera okno przeglądarki obietów w bazie p
 Przycisk "Usuń obiekt z bazy" otwiera okno, za pomocą którego można usunąć obiekt o zadanym ID.
 
 Zrzut ekranu z okna przeglądarki obiektów w bazie:
-![alt Ekran przeglądarki obiektów w bazie.](https://github.com/Zimoslaw/Java-oop-project/blob/main/browser.png?raw=true)
+![alt Ekran przeglądarki obiektów w bazie.](https://github.com/Zimoslaw/Java-oop-project/blob/main/browser.PNG?raw=true)
 Obiekty są wyświetlane na liście jednokrotnego wyboru w postaci tekstowej.
 Przeglądarka obiektów pozwala na filtrowanie po typie (klasie) obiektów i nazwie obiektów.
 Przy zaznaczeniu obiektu z listy i kliknięciu "Modyfikuj", wyświetla się okno modyfikacji parametrów danego obiektu.
