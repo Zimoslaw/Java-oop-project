@@ -11,13 +11,13 @@ Za pomocą aplikacji można utworzyć wyżej wymienione obiekty, zmodyfikować j
 Wszystkie obiekty są dodawane do wspólnej bazy danych (listy obiektów). Każdy obiekt posiada unikalny numer ID.
 
 Poniżej zrzut ekranu z okna głównego aplikacji:
-![alt Ekran główny aplikacji. Skecje 'Dodawanie', 'Przeglądanie' i 'Usuwanie'](https://github.com/Zimoslaw/Java-oop-project/tree/main/main.png?raw=true)
+![alt Ekran główny aplikacji. Skecje 'Dodawanie', 'Przeglądanie' i 'Usuwanie'](https://github.com/Zimoslaw/Java-oop-project/blob/main/main.png?raw=true)
 Przyciski w sekcji "Dodawanie" otwierają okna dodawania obiektu wybranego typu.
 Przycisk "Przeglądarka obiektów" otwiera okno przeglądarki obietów w bazie programu.
 Przycisk "Usuń obiekt z bazy" otwiera okno, za pomocą którego można usunąć obiekt o zadanym ID.
 
 Zrzut ekranu z okna przeglądarki obiektów w bazie:
-![alt Ekran przeglądarki obiektów w bazie.](https://github.com/Zimoslaw/Java-oop-project/tree/main/browser.png?raw=true)
+![alt Ekran przeglądarki obiektów w bazie.](https://github.com/Zimoslaw/Java-oop-project/blob/main/browser.png?raw=true)
 Obiekty są wyświetlane na liście jednokrotnego wyboru w postaci tekstowej.
 Przeglądarka obiektów pozwala na filtrowanie po typie (klasie) obiektów i nazwie obiektów.
 Przy zaznaczeniu obiektu z listy i kliknięciu "Modyfikuj", wyświetla się okno modyfikacji parametrów danego obiektu.
