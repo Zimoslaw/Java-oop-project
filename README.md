@@ -23,3 +23,5 @@ Przeglądarka obiektów pozwala na filtrowanie po typie (klasie) obiektów i naz
 Przy zaznaczeniu obiektu z listy i kliknięciu "Modyfikuj", wyświetla się okno modyfikacji parametrów danego obiektu.
 
 **Obiekty są zapisywane tylko w pamięci programu (nie są zapisywane na dysku i przestają istnieć po zamknięciu programu).**
+
+Dokumentacja JavaDoc znajduje się w folderze docs/
