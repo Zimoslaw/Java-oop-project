@@ -48,6 +48,9 @@ public class DisplayViewController {
 
     }
 
+    /**
+     * Applies filter and displays search results
+     */
     @FXML
     protected void Submit() {
 
@@ -153,12 +156,20 @@ public class DisplayViewController {
         list.setCellFactory(cellFactory2);
     }
 
+    /**
+     * Enables button for object modification
+     * @throws IOException
+     */
     @FXML
     protected void EnableModButton() throws IOException {
         if(list.getSelectionModel().getSelectedItem() != null)
             modButton.setDisable(false);
     }
 
+    /**
+     * Open the window for modifying object selected from list
+     * @throws IOException
+     */
     @FXML
     protected void UpdateSelectedObject() throws IOException {
         String objectData = list.getSelectionModel().getSelectedItem();

@@ -1,7 +1,7 @@
 package kingdoms.kingdoms;
 
 /**
-Lists all classes used in game and that can be instantiate
+Lists all classes used in game and that can be instantiated
  */
 
 enum Classes {

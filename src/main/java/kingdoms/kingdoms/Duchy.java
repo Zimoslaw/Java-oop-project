@@ -153,7 +153,7 @@ public class Duchy extends Province {
     @param stability Stability enum
     @return  Intiger expressing stability level
     */
-    public static int StabilityToInt(Stability stability)
+    public static int stabilityToInt(Stability stability)
     {
         switch(stability)
         {

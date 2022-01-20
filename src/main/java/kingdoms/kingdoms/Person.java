@@ -1,7 +1,7 @@
 package kingdoms.kingdoms;
 
 /**
-<p>Class implementing a teoretical person. Because aa ordinary person has no use in this game, a person cannot be created. It serves only as template for a ruler</p>
+<p>Class implementing a theoretical person. Because aa ordinary person has no use in this game, a person cannot be created. It serves only as template for a ruler</p>
 <p>Person has only an age</p>
 @author Jakub Niewiarowski
  */

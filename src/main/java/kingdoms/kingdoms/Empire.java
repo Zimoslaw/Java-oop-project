@@ -1,6 +1,5 @@
 package kingdoms.kingdoms;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,7 +63,7 @@ public class Empire extends Kingdom
     /**
     Updates empire's influence based on its area, centralization, legitimacy and ruler's prestige */
     public void updateInfluence() {
-        int stability = StabilityToInt(this.getStability());
+        int stability = stabilityToInt(this.getStability());
 
         influence = getArea() * this.getCentralization().level * stability + this.getLegitimacy() + this.getRuler().getPrestige();
     }
@@ -92,7 +91,7 @@ public class Empire extends Kingdom
         {
             int stability = 0;
             for(Kingdom k : kingdoms)
-                stability += StabilityToInt(k.getStability());
+                stability += stabilityToInt(k.getStability());
             stability /= kingdoms.size();
 
             switch(stability)

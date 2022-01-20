@@ -19,7 +19,7 @@ public class Ruler extends Person {
     Constructs a ruler with given name, age, prestige nad initial claim
     @param name Name of the Ruler
     @param age Age of the ruler
-    @param prestige Inital presige of the ruler
+    @param prestige Initial prestige of the ruler
     @param initClaim Initial ruler's claim
     */
     public Ruler(String name, short age, int prestige, Province initClaim)
