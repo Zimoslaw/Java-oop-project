@@ -7,7 +7,7 @@ Projekt jest aplikacją do obsługi prostego modelu, którego można wykorzysta�
 - Cesarstwo - zbiór królestw. Dziedziczy właściwości po klasie królestwa. Posiada współczynnik wpływu (na świat gry).
 
 ## Funkcjonalność
-Za pomocą aplikacji można utworzyć wyżej wymienione obiekty, zmodyfikować je, usunąć i przeglądać listę obiektów w bazie.
+Za pomocą aplikacji można utworzyć wyżej wymienione obiekty, zmodyfikować je, usunąć i przeglądać listę dodanych obiektów.
 Wszystkie obiekty są dodawane do wspólnej bazy danych (listy obiektów). Każdy obiekt posiada unikalny numer ID.
 
 Poniżej zrzut ekranu z okna głównego aplikacji:
