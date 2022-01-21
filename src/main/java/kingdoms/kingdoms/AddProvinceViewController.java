@@ -28,7 +28,7 @@ public class AddProvinceViewController {
                 database.add(province);
                 infos.setText("Dodałeś prowincje:\n"+province.ToString());
             }
-            catch(Throwable exception)
+            catch(NumberFormatException exception)
             {
                 infos.setText("\"Powierzchnia\" musi być liczbą całkowitą");
             }
